@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Timer para o Casamento!</title>
+    <style>
+        /* Estilos globais */
+        body {
+            background-color: #fff2cc;
+            color: #B95500;
+            font-size: 24px;
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+        }
+        hr {
+            background-color: grey;
+            margin-left: 5rem;
+            margin-right: 5rem;
+        }
+
+        /* Estilos do banner */
+        .banner {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Estilos do contador */
+        #countdown {
+            font-size: 40px;
+        }
+
+        /* Estilos do texto principal */
+        .main-text {
+            font-family: 'Dancing Script', cursive;
+            margin-right: 5rem;
+            margin-left: 5rem;
+            text-align: justify;
+            margin-top: 6rem;
+            color: black;
+            text-indent: 5rem;
+        }
+
+        /* Estilos para telas menores (máximo de 600px) */
+        @media (max-width: 600px) {
+            #countdown {
+                font-size: 24px;
+            }
+            .main-text {
+                font-size: 18px;
+                margin-right: 1rem;
+                margin-left: 1rem;
+                text-indent: 1rem;
+            }
+        }
+
+        /* Estilos para os botões */
+        .btn-container {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .btn-container a {
+            width: 80%;
+            max-width: 100%; /* Define a largura máxima para os botões */
+            margin: 10px 0;
+        }
+
+        .btn-container button {
+            width: 100%;
+            padding: 1rem;
+            font-size: 70%;
+            background-color: #B95500;
+            color: #fff;
+            border: none;
+            border-radius: 0.3125rem;
+            cursor: pointer;
+            margin: 0.625rem auto;
+        }
+
+        /* Estilos para o mapa */
+        .map-container {
+            margin-top: 5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        /* Estilos do rodapé */
+        .footer {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <img src="https://drive.google.com/uc?export=view&id=1-NwblQdkpNgYH1tALMFnll22seN7gOPH" alt="Banner" class="banner">
+
+    <hr>
+
+    <h1>Timer para o Casamento!</h1>
+    <p id="countdown"></p>
+    <script>
+      // Define a data final da contagem regressiva (11/02/2024)
+      var countDownDate = new Date("Feb 11, 2024 00:00:00").getTime();
+
+      // Atualiza o contador a cada segundo
+      var x = setInterval(function() {
+        // Obtém a data atual
+        var now = new Date().getTime();
+
+        // Calcula a diferença entre a data final e a atual
+        var distance = countDownDate - now;
+
+        // Calcula os dias, horas, minutos e segundos restantes
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Exibe o resultado na página
+        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ";
+
+        // Se a contagem regressiva terminou, exibe a mensagem final
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("countdown").innerHTML = "CHEGOU O GRANDE DIA";
+        }
+      }, 1000);
+    </script>
+
+<hr>
+
+    <div class="main-text">
+        <p>Bem-vindos ao nosso site de casamento!</p>
+        <p>Estamos muito felizes em compartilhar com vocês a notícia de que nos casaremos no dia 11 de fevereiro de 2024. Este será o dia mais especial de nossas vidas, e estamos ansiosos para celebrar com nossos amigos e familiares mais queridos.</p>
+        <p>A cerimônia será realizada na Kirsch Eventos em Parobé, seguida de uma recepção no próprio local, onde celebraremos nosso amor e nossa felicidade juntos.</p>
+        <p>Agradecemos a todos vocês por fazerem parte das nossas vidas e por nos apoiarem em nossa jornada até aqui. Estamos muito animados para começar esta nova fase de nossas vidas juntos, e esperamos que vocês possam estar conosco neste dia especial.</p>
+        <p>Neste site, vocês encontrarão todas as informações importantes sobre o nosso casamento, como acomodações, horários, mapas e muito mais. Fiquem à vontade para explorar e entrar em contato conosco se tiverem alguma dúvida.</p>
+        <p>Estamos ansiosos para ver todos vocês no nosso grande dia!</p>
+        <p>Com amor, Elisiane e Mateus!</p>
+    </div>
+
+    <div class="btn-container">
+        <a href="https://sites.google.com/view/casamentoelisianeemateus/home/lista-de-presen%C3%A7a"><button type="button">CONFIRME SUA PRESENÇA</button></a>
+        <a href="https://sites.google.com/view/casamentoelisianeemateus/home/lista-de-presentes"><button type="button">LISTA DE PRESENTES</button></a>
+        <a href="https://sites.google.com/view/casamentoelisianeemateus/home/manual-do-convidado"><button type="button">MANUAL DO CONVIDADO</button></a>
+    </div>
+
+    <hr>
+
+    <div class="map-container">
+        <h2>Local do Casamento</h2>
+        <iframe
+            width="80%"
+            height="450"
+            frameborder="0"
+            style="border:0"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.8353256185906!2d-50.859175188083356!3d-29.637525712424196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9519180b446be529%3A0x279106c1e724d8cc!2sKirsch%20Eventos!5e0!3m2!1spt-BR!2sus!4v1695403187475!5m2!1spt-BR!2sus"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+        ></iframe>
+    </div>
+
+    <div class="footer">
+        <span style="font-size: 0.5rem;">© 2024 Elisiane e Mateus. Todos os direitos reservados.</span>
+    </div>
+</body>
+</html>
